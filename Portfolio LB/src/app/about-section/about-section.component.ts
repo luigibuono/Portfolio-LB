@@ -7,10 +7,5 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 })
 export class AboutSectionComponent {
 
-  @Input()
-  navResumeLinkRef?: ElementRef<HTMLAnchorElement>;
 
-  clickNavResumeLink() {
-    this.navResumeLinkRef?.nativeElement.click();
-  }
 }
