@@ -1,0 +1,26 @@
+
+
+  .text-with-gradient {
+    background-color: #3f51b5;
+    display: inline;
+    padding: 5px 10px;
+    border-radius: var(--mdc-filled-button-container-shape, var(--mdc-shape-small, 4px));
+  }
+
+
+@media(max-width:767px){
+  .home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width:375px){
+  .homePage{
+    margin-bottom: -200px;
+    margin-top: 2em;
+  }
+}
+

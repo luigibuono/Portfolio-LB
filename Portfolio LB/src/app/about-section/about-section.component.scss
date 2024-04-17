@@ -1,0 +1,43 @@
+li{
+    margin-right: 20px;
+}
+
+/* Responsive */
+
+@media(max-width:1834px){
+.pic{
+    display: inline-flex;
+    width: 800px;
+}
+}
+
+@media(max-width:1564px){
+    .pic{
+        display: inline-flex;
+        width: 600px;
+    }
+    }
+
+
+    @media(max-width:1314px){
+        .pic{
+            display: inline-flex;
+            width: auto;
+        }
+        }
+
+        
+    @media(max-width:1134px){
+        .float-left {
+            float: none !important; /* Sovrascrive la regola float-left */
+          }
+          .pic2{
+            width: 100%!important;
+          }
+
+          .container2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }

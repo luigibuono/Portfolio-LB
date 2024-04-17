@@ -1,0 +1,59 @@
+<mat-drawer-container class="h-screen">
+  <mat-drawer #drawer *ngIf="isDrawerActive" mode="over" class="w-1/2 ">
+    <!-- app-navlinks are getting used in 2 places with different instances -->
+    <app-navlinks
+      [usedInSidenav]="true" class="mt-10 flex flex-col"
+    ></app-navlinks>
+  </mat-drawer>
+
+  <mat-drawer-content #sideNavContent class=" ">
+
+    <!--Navbar-->
+    <nav #nav
+    class="h-16 navbar-height w-full fixed z-50 flex items-center " style="background-color: #3f51b5;"
+    [class]="!isDrawerActive ? 'justify-around' : 'pl-5 pr-10 justify-between'" >
+
+      <ng-container *ngIf="isDrawerActive; else wholeNav">
+        <button mat-icon-button (click)="drawer?.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a href="" class="text-2xl font-light"
+          ><span class="text-2xl text-[#3f51b5] font-bold text-white" >PORTFOLIO</span></a
+        >
+      </ng-container>
+
+      <ng-template #wholeNav>
+        <a href="" class="text-2xl font-light"
+          ><span class="text-2xl text-[#3f51b5] font-bold text-white"style="padding-right: 450px;">PORTFOLIO</span></a
+        >
+        <!-- app-navlinks are getting used in 2 places with different instances -->
+        <app-navlinks class="flex gap-2"></app-navlinks>
+      </ng-template>
+    </nav>
+ 
+
+    <hr class="h-16 m-0 p-0 navbar-height invisible" />
+
+    <section #section id="home" class="section-container">
+      <app-home-section
+        [navContactLinkRef]="navContactLinkRef"
+        [sectionMinHeight]="sectionMinHeight"
+      ></app-home-section>
+    </section>
+    <section #section id="about" class="m-auto mb-10 w-11/12 md:w-9/12 ">
+      <app-about-section
+        [navResumeLinkRef]="navResumeLinkRef"
+      ></app-about-section>
+    </section>
+
+    <section #section id="project" class="section-container">
+      <app-project-section></app-project-section>
+    </section>
+    <section #section id="contact" class="m-auto mb-10 w-11/12 md:w-9/12 ">
+      <app-contact-section></app-contact-section>
+    </section>
+    <app-footer></app-footer>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+

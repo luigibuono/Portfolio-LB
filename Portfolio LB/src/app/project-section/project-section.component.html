@@ -1,0 +1,53 @@
+<div class="">
+  <h2 class="my-0 py-8 text-5xl text-center font-bold">Progetti</h2>
+
+  <div class="project-container w-full">
+    <ng-container *ngFor="let project of projects">
+      <mat-card class="">
+        <mat-card-content>
+          <div>
+            <img
+              class="mb-5 w-full max-h-[350px] object-cover"
+            />
+            <h2 class="text-2xl">{{ project.name }}</h2>
+            <p class="text-base font-thin">{{ project.description }}</p>
+
+            <mat-divider class="my-5"></mat-divider>
+
+            <h3 class="text-lg">Tecnologie utilizzate:</h3>
+            <div class="flex flex-wrap gap-5">
+              <ng-container *ngFor="let tech of project.techStack">
+                <img
+                  class="w-16 h-16"
+                  [src]="tech.iconPath"
+                  [alt]="tech.name + 'icon'"
+                />
+              </ng-container>
+            </div>
+
+            <mat-divider class="my-5"></mat-divider>
+
+            <div class="flex justify-between flex-wrap">
+              <a
+                [href]="project.sourceCodeLink"
+                target="_blank"
+                mat-flat-button
+                color="primary"
+                class="w-fit p-3 mat-headline-6 font-normal"
+                >Codice</a
+              >
+              <a
+                [href]="project.deployedLink"
+                target="_blank"
+                mat-flat-button
+                color="primary"
+                class="w-fit p-3 mat-headline-6 font-normal"
+                >Vai al sito</a
+              >
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>

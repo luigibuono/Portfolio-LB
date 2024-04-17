@@ -1,0 +1,28 @@
+<div
+  #homeContainer
+  class="md:flex items-center justify-between  homePage"
+>
+  <div class="lg:flex-1 p-2 flex flex-col justify-center home">
+    <div class="">
+      <h5 class="mat-headline-6 mb-1 font-bold text-white text-with-gradient " >LUIGI BUONO</h5>
+      <h1 class="mat-headline-4 font-black mt-3">FULL STACK DEVELOPER</h1>
+    </div>
+    <button
+      #contactButton
+      mat-flat-button
+      color="primary"
+      (click)="clickDownloadCV()"
+      class="w-fit p-7 mat-headline-5"
+    >
+      Scarica CV
+    </button>
+  </div>
+
+  <div class="lg:flex-1">
+    <img
+      class="w-full"
+      src="../../assets/coding.jpg"
+      alt="working man at home"
+    />
+  </div>
+</div>
