@@ -35,12 +35,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChildren('section', { read: ElementRef })
   sectionRefs!: QueryList<ElementRef<HTMLElement>>
 
+  /* Metodo che determina la dimensione per dover attivare la sidebar*/
   private toggleDrawerActivateState(): void {
     this.viewportWidth = window.innerWidth;
     this.viewportHeight = window.innerHeight;
     this.isDrawerActive = this.viewportWidth <= this.sidenavTriggerWidth;
   }
-
+  /* Da una dimensione ad ogni sezioner*/
   private resizeSectionElements() {
     let navHeight = this.navRef.nativeElement.offsetHeight;
     this.sectionRefs.forEach(sectionRef => {
